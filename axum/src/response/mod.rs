@@ -13,7 +13,7 @@ pub mod sse;
 pub use crate::Json;
 
 #[doc(inline)]
-pub use axum_core::response::{Headers, IntoResponse, Response};
+pub use axum_core::response::{Headers, IntoResponse, IntoResponseHeaders, Response};
 
 #[doc(inline)]
 pub use self::{redirect::Redirect, sse::Sse};
