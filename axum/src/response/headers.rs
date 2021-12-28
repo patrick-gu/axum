@@ -124,7 +124,7 @@ mod tests {
         let res = (Headers(vec![("user-agent", "axum")]), "foo").into_response();
 
         assert_eq!(res.headers()["user-agent"], "axum");
-        let body = crate::body::to_bytes(res.into_body())
+        let body = hyper::body::to_bytes(res.into_body())
             .now_or_never()
             .unwrap()
             .unwrap();
@@ -142,7 +142,7 @@ mod tests {
 
         assert_eq!(res.headers()["user-agent"], "axum");
         assert_eq!(res.status(), StatusCode::NOT_FOUND);
-        let body = crate::body::to_bytes(res.into_body())
+        let body = hyper::body::to_bytes(res.into_body())
             .now_or_never()
             .unwrap()
             .unwrap();

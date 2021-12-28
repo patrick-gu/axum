@@ -19,11 +19,6 @@ use http_body::{
 };
 use std::{borrow::Cow, convert::Infallible, iter};
 
-mod headers;
-
-#[doc(inline)]
-pub use self::headers::Headers;
-
 /// Type alias for [`http::Response`] whose body type defaults to [`BoxBody`], the most common body
 /// type used with axum.
 pub type Response<T = BoxBody> = http::Response<T>;
